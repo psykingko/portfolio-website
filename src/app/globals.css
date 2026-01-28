@@ -1,0 +1,378 @@
+@import "tailwindcss";
+@import "../styles/components.css";
+@import "../styles/responsive.css";
+
+:root {
+  /* Modern Color System - 3-color rule */
+  --color-primary: #6d5df6;
+  --color-primary-light: #8b7df7;
+  --color-primary-dark: #5a4ce0;
+
+  /* Background Colors - Modern neutral palette */
+  --color-bg-peach: #fafafa;
+  --color-bg-white: #ffffff;
+  --color-bg-card: #ffffff;
+
+  /* Single Accent Color */
+  --color-accent-orange: #ff7849;
+
+  /* Modern Text Colors */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-text-light: #ffffff;
+  --color-text-muted: #94a3b8;
+
+  /* Remove old accent colors - keeping only orange */
+  /* --color-accent-pink: #ffb3d9; */
+  /* --color-accent-blue: #4ecdc4; */
+
+  /* Enhanced Shadow System - Less borders, more shadows */
+  --shadow-soft: 0 4px 20px rgba(109, 93, 246, 0.08);
+  --shadow-card: 0 8px 32px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 12px 40px rgba(109, 93, 246, 0.12);
+
+  /* Additional Shadow Variants */
+  --shadow-subtle: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-medium: 0 6px 24px rgba(15, 23, 42, 0.08);
+  --shadow-strong: 0 16px 48px rgba(15, 23, 42, 0.12);
+  --shadow-intense: 0 24px 64px rgba(15, 23, 42, 0.16);
+
+  /* Colored Shadows */
+  --shadow-primary: 0 8px 32px rgba(109, 93, 246, 0.12);
+  --shadow-primary-hover: 0 12px 40px rgba(109, 93, 246, 0.18);
+  --shadow-accent-orange: 0 8px 32px rgba(255, 120, 73, 0.12);
+
+  /* Inner Shadows */
+  --shadow-inset-soft: inset 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-inset-medium: inset 0 4px 12px rgba(15, 23, 42, 0.1);
+
+  /* Glow Effects */
+  --shadow-glow-primary: 0 0 20px rgba(109, 93, 246, 0.3);
+  --shadow-glow-accent: 0 0 20px rgba(255, 120, 73, 0.3);
+}
+
+@theme inline {
+  /* Color Palette */
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+
+  --color-bg-peach: var(--color-bg-peach);
+  --color-bg-white: var(--color-bg-white);
+  --color-bg-card: var(--color-bg-card);
+
+  --color-accent-orange: var(--color-accent-orange);
+  --color-accent-pink: var(--color-accent-pink);
+  --color-accent-blue: var(--color-accent-blue);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-light: var(--color-text-light);
+
+  /* Typography - Strong font hierarchy */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Font Weights - Clear hierarchy */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Responsive Font Sizes with Clamp Functions */
+  /* Extra Small Text - Captions, fine print */
+  --font-size-xs: clamp(0.625rem, 1.5vw, 0.75rem);
+
+  /* Small Text - Labels, secondary info */
+  --font-size-sm: clamp(0.75rem, 2vw, 0.875rem);
+
+  /* Base Text - Body text, paragraphs */
+  --font-size-base: clamp(0.875rem, 2.5vw, 1rem);
+
+  /* Large Text - Emphasized body text */
+  --font-size-lg: clamp(1rem, 3vw, 1.125rem);
+
+  /* Extra Large Text - Lead paragraphs */
+  --font-size-xl: clamp(1.125rem, 3.5vw, 1.25rem);
+
+  /* 2XL Text - Small headings, subheadings */
+  --font-size-2xl: clamp(1.25rem, 4vw, 1.5rem);
+
+  /* 3XL Text - Medium headings */
+  --font-size-3xl: clamp(1.5rem, 4.5vw, 1.875rem);
+
+  /* 4XL Text - Large headings */
+  --font-size-4xl: clamp(1.875rem, 5vw, 2.25rem);
+
+  /* 5XL Text - Extra large headings */
+  --font-size-5xl: clamp(2.25rem, 6vw, 3rem);
+
+  /* 6XL Text - Display headings */
+  --font-size-6xl: clamp(3rem, 7vw, 3.75rem);
+
+  /* 7XL Text - Large display headings */
+  --font-size-7xl: clamp(3.75rem, 8vw, 4.5rem);
+
+  /* 8XL Text - Extra large display */
+  --font-size-8xl: clamp(4.5rem, 10vw, 6rem);
+
+  /* 9XL Text - Massive display */
+  --font-size-9xl: clamp(6rem, 12vw, 8rem);
+
+  /* Semantic Heading Sizes */
+  --font-size-heading-xl: clamp(3rem, 8vw, 5rem);
+  --font-size-heading-lg: clamp(2rem, 5vw, 3rem);
+  --font-size-heading-md: clamp(1.5rem, 4vw, 2rem);
+  --font-size-heading-sm: clamp(1.25rem, 3vw, 1.5rem);
+
+  /* Semantic Body Text Sizes */
+  --font-size-body-xl: clamp(1.125rem, 3vw, 1.25rem);
+  --font-size-body-lg: clamp(1rem, 2.5vw, 1.125rem);
+  --font-size-body-md: clamp(0.875rem, 2.5vw, 1rem);
+  --font-size-body-sm: clamp(0.75rem, 2vw, 0.875rem);
+  --font-size-body-xs: clamp(0.625rem, 1.5vw, 0.75rem);
+
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Spacing Scale */
+  --spacing-px: 1px;
+  --spacing-0: 0;
+  --spacing-0-5: 0.125rem;
+  --spacing-1: 0.25rem;
+  --spacing-1-5: 0.375rem;
+  --spacing-2: 0.5rem;
+  --spacing-2-5: 0.625rem;
+  --spacing-3: 0.75rem;
+  --spacing-3-5: 0.875rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+  --spacing-9: 2.25rem;
+  --spacing-10: 2.5rem;
+  --spacing-11: 2.75rem;
+  --spacing-12: 3rem;
+  --spacing-14: 3.5rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-28: 7rem;
+  --spacing-32: 8rem;
+  --spacing-36: 9rem;
+  --spacing-40: 10rem;
+  --spacing-44: 11rem;
+  --spacing-48: 12rem;
+  --spacing-52: 13rem;
+  --spacing-56: 14rem;
+  --spacing-60: 15rem;
+  --spacing-64: 16rem;
+  --spacing-72: 18rem;
+  --spacing-80: 20rem;
+  --spacing-96: 24rem;
+
+  /* Responsive Section Spacing - Increased by 15% for premium feel */
+  --spacing-section: clamp(4.6rem, 9.2vw, 9.2rem);
+  --spacing-section-gap: clamp(2.3rem, 4.6vw, 4.6rem);
+
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;
+  --radius-base: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-card: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --shadow-none: 0 0 #0000;
+
+  /* Custom Shadows from Design System */
+  --shadow-soft: var(--shadow-soft);
+  --shadow-card: var(--shadow-card);
+  --shadow-hover: var(--shadow-hover);
+  --shadow-subtle: var(--shadow-subtle);
+  --shadow-medium: var(--shadow-medium);
+  --shadow-strong: var(--shadow-strong);
+  --shadow-intense: var(--shadow-intense);
+  --shadow-primary: var(--shadow-primary);
+  --shadow-primary-hover: var(--shadow-primary-hover);
+  --shadow-accent-orange: var(--shadow-accent-orange);
+  --shadow-accent-pink: var(--shadow-accent-pink);
+  --shadow-accent-blue: var(--shadow-accent-blue);
+  --shadow-inset-soft: var(--shadow-inset-soft);
+  --shadow-inset-medium: var(--shadow-inset-medium);
+  --shadow-glow-primary: var(--shadow-glow-primary);
+  --shadow-glow-accent: var(--shadow-glow-accent);
+
+  /* Container Sizes */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  /* Breakpoints */
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+
+  /* Z-Index Scale */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-auto: auto;
+
+  /* Transition Durations */
+  --duration-75: 75ms;
+  --duration-100: 100ms;
+  --duration-150: 150ms;
+  --duration-200: 200ms;
+  --duration-300: 300ms;
+  --duration-500: 500ms;
+  --duration-700: 700ms;
+  --duration-1000: 1000ms;
+
+  /* Transition Timing Functions */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-custom: cubic-bezier(0.6, -0.05, 0.01, 0.99);
+}
+
+body {
+  background: var(--color-bg-peach);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: var(--line-height-normal);
+}
+
+/* Accessibility Styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  font-weight: 600;
+  font-size: 14px;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Focus visible styles for better accessibility */
+.focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.focus-visible:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-primary: #0000ff;
+    --color-primary-dark: #000080;
+  }
+}
+
+/* Ensure proper focus management for main content */
+main:focus {
+  outline: none;
+}
+
+/* Back to top button base styles */
+#back-to-top {
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+#back-to-top:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}

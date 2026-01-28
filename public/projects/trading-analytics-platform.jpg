@@ -1,0 +1,16 @@
+<!-- Placeholder for Trading Analytics Platform project image -->
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f9ede3"/>
+  <rect x="20" y="20" width="360" height="260" fill="#ffffff" rx="12"/>
+  <rect x="40" y="40" width="320" height="25" fill="#5634d6" rx="4"/>
+  <polyline points="60,100 100,80 140,120 180,90 220,110 260,70 300,100 340,85" 
+            stroke="#ff6b35" stroke-width="3" fill="none"/>
+  <polyline points="60,140 100,160 140,130 180,150 220,120 260,140 300,110 340,125" 
+            stroke="#4ecdc4" stroke-width="3" fill="none"/>
+  <rect x="60" y="180" width="20" height="40" fill="#5634d6" opacity="0.7"/>
+  <rect x="90" y="190" width="20" height="30" fill="#ff6b35" opacity="0.7"/>
+  <rect x="120" y="170" width="20" height="50" fill="#4ecdc4" opacity="0.7"/>
+  <rect x="150" y="185" width="20" height="35" fill="#ffb3d9" opacity="0.7"/>
+  <rect x="180" y="175" width="20" height="45" fill="#7b5ae6" opacity="0.7"/>
+  <text x="200" y="260" text-anchor="middle" fill="#666666" font-family="Inter, sans-serif" font-size="14">Trading Analytics Platform</text>
+</svg>
