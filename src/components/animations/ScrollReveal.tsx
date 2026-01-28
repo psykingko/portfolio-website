@@ -23,18 +23,18 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   className = "",
   delay = 0,
   direction = "up",
-  distance = 60,
-  duration = 0.6,
-  threshold = 0.1,
+  distance = 30,
+  duration = 0.3,
+  threshold = 0.05,
   triggerOnce = true,
   stagger = false,
-  staggerDelay = 0.1,
+  staggerDelay = 0.05,
 }) => {
   const { prefersReducedMotion } = useReducedMotion();
   const [ref, inView] = useInView({
     threshold,
     triggerOnce,
-    rootMargin: "-50px 0px",
+    rootMargin: "0px 0px -10px 0px",
   });
 
   // Create animation variants based on direction
@@ -48,7 +48,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
     const baseTransition = {
       duration,
-      ease: [0.6, -0.05, 0.01, 0.99] as [number, number, number, number],
+      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
       delay,
     };
 
@@ -102,13 +102,13 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   };
 
   const staggerItemVariants: Variants = {
-    initial: { opacity: 0, y: 20 },
+    initial: { opacity: 0, y: 10 },
     animate: {
       opacity: 1,
       y: 0,
       transition: {
         duration: duration * 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99] as [number, number, number, number],
+        ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
       },
     },
   };

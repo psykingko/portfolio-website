@@ -5,7 +5,6 @@ import AboutSection from "../components/sections/AboutSection";
 import SkillsSection from "../components/sections/SkillsSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import ContactSection from "../components/sections/ContactSection";
-import ScrollProgress from "../components/animations/ScrollProgress";
 import { SITE_CONFIG } from "../utils/constants";
 
 export default function Home() {
@@ -18,9 +17,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Scroll Progress Indicator */}
-      <ScrollProgress />
-
       <main id="main-content" className="bg-bg-peach">
         <HeroSection
           name={SITE_CONFIG.tagline}

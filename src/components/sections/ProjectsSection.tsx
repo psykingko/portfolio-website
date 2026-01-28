@@ -8,6 +8,8 @@ import { cn } from "@/utils";
 import ScrollReveal from "../animations/ScrollReveal";
 import { HoverLift, HoverScale } from "../animations/MicroInteractions";
 import SectionDivider from "../animations/SectionDivider";
+import OrganicBlob from "../animations/OrganicBlob";
+import SketchUnderline from "../animations/SketchUnderline";
 
 interface ProjectsSectionProps {
   projects?: ProjectCardProps[];
@@ -21,12 +23,31 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   return (
     <section
       id="projects"
-      className={cn("projects-section section-padding bg-bg-white", className)}
+      className={cn(
+        "projects-section section-padding bg-gradient-to-br from-bg-playful-white to-accent-lavender/20 relative overflow-hidden",
+        className
+      )}
       aria-labelledby="projects-heading"
     >
-      <div className="container-xl">
+      {/* Organic Blobs */}
+      <OrganicBlob
+        color="#5634d6"
+        opacity={0.08}
+        size="xl"
+        position={{ top: "5%", left: "-10%" }}
+        blur={true}
+      />
+      <OrganicBlob
+        color="#FF6B35"
+        opacity={0.06}
+        size="lg"
+        position={{ bottom: "15%", right: "-8%" }}
+        blur={true}
+      />
+
+      <div className="container-xl relative z-10">
         {/* Section Header */}
-        <ScrollReveal direction="down" delay={0.1}>
+        <ScrollReveal direction="down" delay={0.05}>
           <div className="text-center mb-20">
             <h2
               id="projects-heading"
@@ -34,7 +55,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             >
               Featured Projects
             </h2>
-            <div className="w-16 h-1 bg-accent-orange mx-auto rounded-full mb-8" />
+            <SketchUnderline color="#FF6B35" width="160px" className="mb-8" />
             <p className="text-lead text-text-secondary max-w-2xl mx-auto">
               A showcase of my recent work in full-stack development, AI/ML, and
               web applications. Each project demonstrates different aspects of
@@ -62,7 +83,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
         {/* View More Projects Link */}
         {projects.length >= 3 && (
-          <ScrollReveal direction="fade" delay={0.5}>
+          <ScrollReveal direction="fade" delay={0.2}>
             <div className="text-center mt-16">
               <HoverScale intensity="subtle">
                 <a
@@ -97,7 +118,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       </div>
 
       {/* Section Divider */}
-      <SectionDivider variant="dots" color="#4ecdc4" />
+      <SectionDivider variant="geometric" color="#5634d6" />
     </section>
   );
 };

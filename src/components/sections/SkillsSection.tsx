@@ -1,66 +1,99 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Card from "../ui/Card";
 import { SKILLS_DATA, SKILL_CATEGORIES, Skill } from "@/utils/constants";
 import ScrollReveal from "../animations/ScrollReveal";
 import { HoverLift } from "../animations/MicroInteractions";
 import SectionDivider from "../animations/SectionDivider";
+import DottedPattern from "../animations/DottedPattern";
+import SketchUnderline from "../animations/SketchUnderline";
+import {
+  Code2,
+  Layers,
+  FileCode,
+  Zap,
+  Database,
+  Cpu,
+  Wrench,
+  Globe,
+  Palette,
+  Wind,
+  Circle,
+  Server,
+  Flame,
+  Box,
+  Leaf,
+  Fish,
+  HardDrive,
+  Brain,
+  BarChart3,
+  Bot,
+  FileText,
+  Search,
+  GitBranch,
+  Container,
+  Cloud,
+  Send,
+  Code,
+  Figma,
+} from "lucide-react";
 
 interface SkillsSectionProps {
   className?: string;
 }
 
-// Simple skill icons mapping
+// Icon mapping with Lucide React icons
 const getSkillIcon = (skillName: string) => {
-  const iconMap: Record<string, string> = {
+  const iconMap: Record<string, React.ReactNode> = {
     // Frontend
-    React: "⚛️",
-    "Next.js": "▲",
-    TypeScript: "🔷",
-    JavaScript: "🟨",
-    HTML5: "🌐",
-    CSS3: "🎨",
-    "Tailwind CSS": "💨",
-    Sass: "🎨",
+    React: <Code2 className="w-4 h-4" />,
+    "Next.js": <Layers className="w-4 h-4" />,
+    TypeScript: <FileCode className="w-4 h-4" />,
+    JavaScript: <Code className="w-4 h-4" />,
+    HTML5: <Globe className="w-4 h-4" />,
+    CSS3: <Palette className="w-4 h-4" />,
+    "Tailwind CSS": <Wind className="w-4 h-4" />,
+    Sass: <Palette className="w-4 h-4" />,
 
     // Backend
-    "Node.js": "🟢",
-    Python: "🐍",
-    FastAPI: "⚡",
-    "Express.js": "🚀",
-    Django: "🎸",
-    Flask: "🌶️",
+    "Node.js": <Circle className="w-4 h-4" />,
+    Python: <Code2 className="w-4 h-4" />,
+    FastAPI: <Zap className="w-4 h-4" />,
+    "Express.js": <Server className="w-4 h-4" />,
+    Django: <Server className="w-4 h-4" />,
+    Flask: <Flame className="w-4 h-4" />,
 
     // Database
-    MongoDB: "🍃",
-    PostgreSQL: "🐘",
-    MySQL: "🐬",
-    Redis: "🔴",
-    SQLite: "💾",
+    MongoDB: <Leaf className="w-4 h-4" />,
+    PostgreSQL: <Database className="w-4 h-4" />,
+    MySQL: <Fish className="w-4 h-4" />,
+    Redis: <Box className="w-4 h-4" />,
+    SQLite: <HardDrive className="w-4 h-4" />,
 
     // AI/ML
-    TensorFlow: "🧠",
-    PyTorch: "🔥",
-    "Scikit-learn": "📊",
-    "OpenAI API": "🤖",
-    "Hugging Face": "🤗",
-    NLTK: "📝",
-    spaCy: "🔍",
+    TensorFlow: <Brain className="w-4 h-4" />,
+    PyTorch: <Flame className="w-4 h-4" />,
+    "Scikit-learn": <BarChart3 className="w-4 h-4" />,
+    "OpenAI API": <Bot className="w-4 h-4" />,
+    "Hugging Face": <Bot className="w-4 h-4" />,
+    NLTK: <FileText className="w-4 h-4" />,
+    spaCy: <Search className="w-4 h-4" />,
 
     // Tools
-    Git: "📝",
-    Docker: "🐳",
-    AWS: "☁️",
-    Vercel: "▲",
-    Netlify: "🌐",
-    Postman: "📮",
-    "VS Code": "💻",
-    Figma: "🎨",
+    Git: <GitBranch className="w-4 h-4" />,
+    Docker: <Container className="w-4 h-4" />,
+    AWS: <Cloud className="w-4 h-4" />,
+    Vercel: <Layers className="w-4 h-4" />,
+    Netlify: <Globe className="w-4 h-4" />,
+    Postman: <Send className="w-4 h-4" />,
+    "VS Code": <Code className="w-4 h-4" />,
+    Figma: <Figma className="w-4 h-4" />,
   };
 
-  return iconMap[skillName] || "🔧";
+  return iconMap[skillName] || <Wrench className="w-4 h-4" />;
 };
 
 const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
@@ -79,18 +112,24 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
   return (
     <section
       id="skills"
-      className={cn("section-padding bg-bg-white", className)}
+      className={cn(
+        "section-padding bg-tech-white relative overflow-hidden",
+        className
+      )}
       aria-labelledby="skills-heading"
     >
-      <div className="container-xl mx-auto px-4">
+      {/* Subtle Dotted Pattern */}
+      <DottedPattern color="#5634d6" opacity={0.05} spacing={35} dotSize={2} />
+
+      <div className="container-xl mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <ScrollReveal direction="down" delay={0.1}>
+          <ScrollReveal direction="down" delay={0.05}>
             <div className="text-center mb-20">
               <h2 id="skills-heading" className="heading-lg text-primary mb-6">
                 Technical Skills
               </h2>
-              <div className="w-16 h-1 bg-accent-orange mx-auto rounded-full mb-8" />
+              <SketchUnderline color="#5634d6" width="140px" className="mb-8" />
               <p className="text-lead text-text-secondary max-w-2xl mx-auto">
                 Technologies and tools I use to build modern web applications
                 and AI-powered systems.
@@ -110,15 +149,19 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
                     direction="up"
                     delay={0.2 + categoryIndex * 0.1}
                   >
-                    <HoverLift intensity="medium">
-                      <Card className="h-full" hover={true} padding="lg">
+                    <HoverLift intensity="subtle">
+                      <Card
+                        className="h-full flex flex-col min-h-[400px]"
+                        hover={true}
+                        padding="lg"
+                      >
                         {/* Category Header */}
-                        <div className="mb-8">
+                        <div className="mb-6">
                           <ScrollReveal
                             direction="fade"
                             delay={0.4 + categoryIndex * 0.1}
                           >
-                            <h3 className="heading-sm text-primary mb-3">
+                            <h3 className="heading-sm text-primary mb-2">
                               {categoryInfo.title}
                             </h3>
                             <p className="body-sm text-text-secondary">
@@ -134,7 +177,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
                           delay={0.5 + categoryIndex * 0.1}
                         >
                           <div
-                            className="space-y-4"
+                            className="space-y-3 flex-1"
                             role="list"
                             aria-label={`${categoryInfo.title} skills`}
                           >
@@ -144,13 +187,21 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
                                 className="flex items-center space-x-3 group"
                                 role="listitem"
                               >
-                                <span
-                                  className="text-xl flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
-                                  aria-hidden="true"
+                                <motion.div
+                                  className="w-8 h-8 rounded-lg bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:bg-primary group-hover:scale-110"
+                                  whileHover={{
+                                    rotate: [0, -5, 5, -5, 0],
+                                    transition: { duration: 0.5 },
+                                  }}
                                 >
-                                  {getSkillIcon(skill.name)}
-                                </span>
-                                <span className="body-md text-text-primary font-medium group-hover:text-primary transition-colors duration-200">
+                                  <span
+                                    className="text-white transition-all duration-200 group-hover:scale-110"
+                                    aria-hidden="true"
+                                  >
+                                    {getSkillIcon(skill.name)}
+                                  </span>
+                                </motion.div>
+                                <span className="body-sm text-text-primary font-medium group-hover:text-primary transition-colors duration-200">
                                   {skill.name}
                                 </span>
                               </div>
@@ -166,7 +217,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
           </div>
 
           {/* Additional Info */}
-          <ScrollReveal direction="fade" delay={0.8}>
+          <ScrollReveal direction="fade" delay={0.3}>
             <div className="mt-16 text-center">
               <p className="body-md text-text-secondary">
                 Always learning and exploring new technologies to stay current
@@ -178,7 +229,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
       </div>
 
       {/* Section Divider */}
-      <SectionDivider variant="wave" color="#ff7849" />
+      <SectionDivider variant="geometric" color="#5634d6" />
     </section>
   );
 };

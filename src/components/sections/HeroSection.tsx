@@ -2,12 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import IsometricScene from "../animations/IsometricScene";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 import {
-  fadeInUp,
   fadeInLeft,
-  fadeInRight,
   staggerContainer,
   staggerItem,
 } from "../../utils/animations";
@@ -37,10 +34,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     ? { initial: {}, animate: {} }
     : fadeInLeft;
 
-  const heroVisualVariants = prefersReducedMotion
-    ? { initial: {}, animate: {} }
-    : fadeInRight;
-
   const containerVariants = prefersReducedMotion
     ? { initial: {}, animate: {} }
     : staggerContainer;
@@ -69,71 +62,158 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         Skip to main content
       </a>
 
-      {/* Animated background elements */}
+      {/* Right side background with dot grid pattern and curved lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-20 left-10 w-2 h-2 bg-accent-pink rounded-full opacity-60"
-          animate={
-            prefersReducedMotion
-              ? {}
-              : {
-                  y: [-10, 10, -10],
-                  x: [-5, 5, -5],
-                  scale: [1, 1.2, 1],
-                  transition: {
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  },
-                }
-          }
-        />
-        <motion.div
-          className="absolute top-40 right-20 w-3 h-3 bg-accent-blue rounded-full opacity-40"
-          animate={
-            prefersReducedMotion
-              ? {}
-              : {
-                  y: [10, -10, 10],
-                  rotate: [0, 180, 360],
-                  transition: {
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1,
-                  },
-                }
-          }
-        />
-        <motion.div
-          className="absolute bottom-40 left-20 w-1 h-1 bg-accent-orange rounded-full opacity-70"
-          animate={
-            prefersReducedMotion
-              ? {}
-              : {
-                  y: [-8, 8, -8],
-                  scale: [1, 1.5, 1],
-                  transition: {
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 2,
-                  },
-                }
-          }
-        />
+        {/* Dot grid pattern - covers entire hero section */}
+        <div className="absolute inset-0 w-full h-full">
+          <svg
+            className="w-full h-full opacity-30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <pattern
+                id="dot-pattern"
+                x="0"
+                y="0"
+                width="40"
+                height="40"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="2" cy="2" r="1.5" fill="#6D5DF6" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dot-pattern)" />
+          </svg>
+        </div>
+
+        {/* Curved flowing lines - animated */}
+        <svg
+          className="absolute right-0 top-0 w-1/2 h-full opacity-40"
+          viewBox="0 0 500 800"
+          preserveAspectRatio="xMaxYMid slice"
+        >
+          {/* Top curved line */}
+          <motion.path
+            d="M 500 100 Q 400 150 300 100 T 100 100 L 100 0 L 500 0 Z"
+            fill="none"
+            stroke="#6D5DF6"
+            strokeWidth="3"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{
+              pathLength: 1,
+              opacity: 0.6,
+              d: [
+                "M 500 100 Q 400 150 300 100 T 100 100 L 100 0 L 500 0 Z",
+                "M 500 120 Q 400 170 300 120 T 100 120 L 100 0 L 500 0 Z",
+                "M 500 100 Q 400 150 300 100 T 100 100 L 100 0 L 500 0 Z",
+              ],
+            }}
+            transition={{
+              pathLength: { duration: 2, ease: "easeInOut" },
+              opacity: { duration: 1 },
+              d: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+            }}
+          />
+
+          {/* Middle curved line */}
+          <motion.path
+            d="M 500 300 Q 350 250 200 300 T -50 300"
+            fill="none"
+            stroke="#FF7849"
+            strokeWidth="2.5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{
+              pathLength: 1,
+              opacity: 0.5,
+              d: [
+                "M 500 300 Q 350 250 200 300 T -50 300",
+                "M 500 320 Q 350 270 200 320 T -50 320",
+                "M 500 300 Q 350 250 200 300 T -50 300",
+              ],
+            }}
+            transition={{
+              pathLength: { duration: 2, ease: "easeInOut", delay: 0.5 },
+              opacity: { duration: 1, delay: 0.5 },
+              d: {
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              },
+            }}
+          />
+
+          {/* Bottom curved line */}
+          <motion.path
+            d="M 500 500 Q 300 450 100 500 T -100 500"
+            fill="none"
+            stroke="#6D5DF6"
+            strokeWidth="2"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{
+              pathLength: 1,
+              opacity: 0.4,
+              d: [
+                "M 500 500 Q 300 450 100 500 T -100 500",
+                "M 500 520 Q 300 470 100 520 T -100 520",
+                "M 500 500 Q 300 450 100 500 T -100 500",
+              ],
+            }}
+            transition={{
+              pathLength: { duration: 2, ease: "easeInOut", delay: 1 },
+              opacity: { duration: 1, delay: 1 },
+              d: {
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2,
+              },
+            }}
+          />
+
+          {/* Large curved area - bottom right */}
+          <motion.path
+            d="M 500 600 Q 400 550 300 600 Q 200 650 100 600 L 100 800 L 500 800 Z"
+            fill="none"
+            stroke="#FF7849"
+            strokeWidth="2"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{
+              pathLength: 1,
+              opacity: 0.3,
+              d: [
+                "M 500 600 Q 400 550 300 600 Q 200 650 100 600 L 100 800 L 500 800 Z",
+                "M 500 620 Q 400 570 300 620 Q 200 670 100 620 L 100 800 L 500 800 Z",
+                "M 500 600 Q 400 550 300 600 Q 200 650 100 600 L 100 800 L 500 800 Z",
+              ],
+            }}
+            transition={{
+              pathLength: { duration: 2, ease: "easeInOut", delay: 1.5 },
+              opacity: { duration: 1, delay: 1.5 },
+              d: {
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 3,
+              },
+            }}
+          />
+        </svg>
+
+        {/* Subtle gradient overlay */}
+        <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-primary/3 to-transparent" />
       </div>
 
-      <div className="container-xl w-full">
+      <div className="container-xl w-full relative z-10">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[80vh]"
           variants={containerVariants}
           initial="initial"
           animate="animate"
         >
-          {/* Text Content - 60% on desktop */}
+          {/* Text Content - Left aligned, 60% width */}
           <motion.div
-            className="lg:col-span-7 space-y-6 lg:space-y-8 text-center lg:text-left"
+            className="lg:col-span-7 space-y-6 lg:space-y-8 text-left"
             variants={heroTextVariants}
           >
             {/* Greeting */}
@@ -164,10 +244,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               </motion.h1>
             </motion.div>
 
-            {/* Subtitle - Reduced and more impactful */}
+            {/* Subtitle */}
             <motion.div variants={itemVariants}>
               <motion.p
-                className="body-lg text-text-secondary max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+                className="body-lg text-text-secondary max-w-2xl leading-relaxed"
                 whileHover={
                   prefersReducedMotion
                     ? {}
@@ -181,7 +261,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4"
+              className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               <InteractiveButton
                 onClick={ctaButtons.primary.action}
@@ -219,30 +299,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </motion.div>
           </motion.div>
 
-          {/* Isometric 3D Scene - 40% on desktop */}
-          <motion.div
-            className="lg:col-span-5 flex justify-center items-center"
-            variants={heroVisualVariants}
-          >
-            <motion.div
-              className="w-full max-w-md lg:max-w-lg xl:max-w-xl aspect-square"
-              whileHover={
-                prefersReducedMotion
-                  ? {}
-                  : { scale: 1.02, transition: { duration: 0.3 } }
-              }
-            >
-              <IsometricScene
-                className="w-full h-full"
-                prefersReducedMotion={prefersReducedMotion}
-              />
-            </motion.div>
-          </motion.div>
+          {/* Right side - empty space for background elements */}
+          <div className="lg:col-span-5 hidden lg:block" />
         </motion.div>
       </div>
 
       {/* Scroll indicator */}
-      <ScrollReveal direction="fade" delay={1.5}>
+      <ScrollReveal direction="fade" delay={0.5}>
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <motion.button
             onClick={handleScrollToProjects}

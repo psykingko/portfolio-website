@@ -235,8 +235,8 @@ export const SITE_CONFIG = {
   title: "Full Stack & AI Developer",
   description:
     "I build web apps and ML tools — React, Node, FastAPI, NLP & Deep Learning.",
-  tagline: "Hello, my name's Ashish Singh. I'm a Full-Stack & AI Developer.",
-  resumeUrl: "/Ashish_singh_resume.pdf",
+    resumeUrl: "/Ashish_singh_resume.pdf",
+    tagline: "Hello, my name's Ashish Singh. I am a",
 } as const;
 
 // Skills Data

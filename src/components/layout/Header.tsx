@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
           fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out
           ${
             isScrolled
-              ? "bg-white/95 backdrop-blur-md shadow-soft border-b border-black/5"
+              ? "bg-white/95 backdrop-blur-md shadow-soft"
               : "bg-transparent"
           }
           ${className}
@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
             <div className="flex items-center">
               <a
                 href="#hero"
-                className="text-xl font-bold text-primary hover:text-primary-dark transition-colors duration-200 focus-visible"
+                className="text-xl font-bold text-primary hover:text-primary-dark transition-colors duration-200 focus:outline-none focus-visible:outline-none"
                 aria-label="Ashish Singh - Go to top"
               >
                 <span className="font-display">Ashish Singh</span>

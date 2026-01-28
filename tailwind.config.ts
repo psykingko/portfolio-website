@@ -26,11 +26,16 @@ const config: Config = {
           peach: "var(--color-bg-peach)",
           white: "var(--color-bg-white)",
           card: "var(--color-bg-card)",
+          "playful-white": "#FCFCFF", // Warm white with personality
+          "tech-white": "#F7F8FE", // Cool tech white
+          "paper-white": "#FAFAF7", // Paper-like white
         },
         accent: {
           orange: "var(--color-accent-orange)",
           pink: "var(--color-accent-pink)",
           blue: "var(--color-accent-blue)",
+          lavender: "#E8E4FF", // Light lavender for blobs
+          peach: "#FFE5D9", // Light peach for blobs
         },
         text: {
           primary: "var(--color-text-primary)",

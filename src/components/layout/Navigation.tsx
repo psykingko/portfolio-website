@@ -115,7 +115,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
               onClick={e => handleNavClick(e, item.href)}
               className={`
                 relative text-base font-medium transition-colors duration-200 ease-out
-                hover:text-primary focus-visible
+                hover:text-primary focus:outline-none focus-visible:outline-none
                 ${
                   activeSection === item.href.substring(1)
                     ? "text-primary"
@@ -193,7 +193,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
       >
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
-          <div className="flex items-center justify-between p-6 border-b border-black/10">
+          <div className="flex items-center justify-between p-6">
             <h2
               id="mobile-menu-title"
               className="text-lg font-semibold text-text-primary"
@@ -249,7 +249,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
           </nav>
 
           {/* Mobile Menu Footer */}
-          <div className="p-6 border-t border-black/10">
+          <div className="p-6">
             <a
               href="/resume.pdf"
               download

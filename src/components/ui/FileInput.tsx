@@ -101,8 +101,8 @@ const FileInput: React.FC<FileInputProps> = ({
   const dropzoneClasses = cn(
     "relative border-2 border-dashed rounded-lg p-6 transition-all duration-200",
     "cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary",
-    "hover:border-primary hover:bg-primary hover:bg-opacity-5",
-    dragActive && "border-primary bg-primary bg-opacity-10",
+    "hover:border-primary hover:bg-gray-50",
+    dragActive && "border-primary bg-primary bg-opacity-5",
     disabled && "opacity-50 cursor-not-allowed",
     ariaInvalid && "border-red-500 focus:ring-red-500",
     !ariaInvalid && "border-gray-300",

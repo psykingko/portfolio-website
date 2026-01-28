@@ -47,8 +47,8 @@ const MicroInteraction: React.FC<MicroInteractionProps> = ({
       switch (effect) {
         case "lift":
           variants.whileHover = {
-            y: -getIntensityValue(8),
-            transition: { duration: 0.3, ease: "easeOut" },
+            y: -getIntensityValue(4),
+            transition: { duration: 0.2, ease: [0.25, 0.1, 0.25, 1] },
           };
           break;
         case "scale":
@@ -126,7 +126,7 @@ export const HoverLift: React.FC<{
     type="hover"
     effect="lift"
     intensity={intensity}
-    className={className}
+    className={`${className} will-change-transform`}
   >
     {children}
   </MicroInteraction>

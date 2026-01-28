@@ -2,6 +2,19 @@
 @import "../styles/components.css";
 @import "../styles/responsive.css";
 
+/* Remove borders from all links globally */
+a {
+  border: 0 !important;
+  outline: none;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 :root {
   /* Modern Color System - 3-color rule */
   --color-primary: #6d5df6;
