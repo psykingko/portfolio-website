@@ -224,8 +224,8 @@ export const getBorderRadius = (key: keyof typeof BORDER_RADIUS) =>
 export const CONTACT_INFO = {
   email: "singhashish9599@gmail.com",
   phone: "+91 9599717790",
-  linkedin: "https://linkedin.com/in/ashish-singh-dev",
-  github: "https://github.com/singhashish9599",
+  linkedin: "https://www.linkedin.com/in/ashishs190100/",
+  github: "https://github.com/psykingko",
 } as const;
 
 // Site Configuration

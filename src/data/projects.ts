@@ -18,8 +18,8 @@ export const PROJECTS_DATA: ProjectCardProps[] = [
     ],
     thumbnail: "/projects/multi_sentiment.png",
     links: {
-      github: "https://github.com/singhashish9599/multi-sentiment-analyzer",
-      demo: "https://multi-sentiment-analyzer-demo.vercel.app",
+      github: "https://github.com/psykingko/multi-sentiment-analyzer",
+      demo: "https://multi-sentiment-analyzer.vercel.app/",
     },
   },
   {
@@ -36,8 +36,8 @@ export const PROJECTS_DATA: ProjectCardProps[] = [
     ],
     thumbnail: "/projects/voices.png",
     links: {
-      github: "https://github.com/singhashish9599/prernaBlog",
-      demo: "https://prerna-blog-demo.vercel.app",
+      github: "https://github.com/psykingko/voicesOnTheWall",
+      demo: "https://voices-on-the-wall.vercel.app/",
     },
   },
   {
@@ -55,8 +55,8 @@ export const PROJECTS_DATA: ProjectCardProps[] = [
     ],
     thumbnail: "/projects/linksaver.png",
     links: {
-      github: "https://github.com/singhashish9599/link-saver-app",
-      demo: "https://link-saver-app-demo.vercel.app",
+      github: "https://github.com/psykingko/link-saver-app",
+      demo: "https://link-saver-app-indol.vercel.app/login",
     },
   },
 ];
