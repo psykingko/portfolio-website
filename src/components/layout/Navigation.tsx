@@ -173,7 +173,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
           aria-hidden="true"
         />
@@ -183,17 +183,18 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
       <div
         id="mobile-menu"
         className={`
-          fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-intense z-50 md:hidden
-          transform transition-transform duration-300 ease-out
+          fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white/95 backdrop-blur-md shadow-intense z-50 md:hidden
+          transform transition-transform duration-300 ease-out border-l border-gray-200
           ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}
         `}
         role="dialog"
         aria-modal="true"
         aria-labelledby="mobile-menu-title"
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.98)" }}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full bg-white">
           {/* Mobile Menu Header */}
-          <div className="flex items-center justify-between p-6">
+          <div className="flex items-center justify-between p-6 bg-white border-b border-gray-100">
             <h2
               id="mobile-menu-title"
               className="text-lg font-semibold text-text-primary"
@@ -215,7 +216,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
 
           {/* Mobile Menu Items */}
           <nav
-            className="flex-1 px-6 py-8"
+            className="flex-1 px-6 py-8 bg-white"
             role="navigation"
             aria-label="Mobile navigation"
           >
@@ -249,7 +250,7 @@ const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
           </nav>
 
           {/* Mobile Menu Footer */}
-          <div className="p-6">
+          <div className="p-6 bg-white border-t border-gray-100">
             <a
               href="/resume.pdf"
               download
