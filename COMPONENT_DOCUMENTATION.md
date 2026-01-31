@@ -199,8 +199,8 @@ import Badge from "@/components/ui/Badge";
 All components use CSS custom properties from the design system:
 
 ```css
---color-primary: #5634d6 --color-primary-light: #7b5ae6
-  --color-primary-dark: #4527b8 --color-bg-card: #ffffff
+--color-primary: #1b2651 --color-primary-light: #2d3a6b
+  --color-primary-dark: #0f1a3d --color-bg-card: #ffffff
   --color-text-primary: #1a1a1a --color-text-secondary: #666666;
 ```
 

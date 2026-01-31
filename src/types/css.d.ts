@@ -5,11 +5,11 @@ declare module "csstype" {
     "--color-primary"?: string;
     "--color-primary-light"?: string;
     "--color-primary-dark"?: string;
-    "--color-bg-peach"?: string;
+    "--color-bg-beige"?: string;
     "--color-bg-white"?: string;
     "--color-bg-card"?: string;
     "--color-accent-orange"?: string;
-    "--color-accent-pink"?: string;
+
     "--color-accent-blue"?: string;
     "--color-text-primary"?: string;
     "--color-text-secondary"?: string;

@@ -3,19 +3,18 @@
 
 export const COLORS = {
   primary: {
-    DEFAULT: "#5634d6",
-    light: "#7b5ae6",
-    dark: "#4527b8",
+    DEFAULT: "#1b2651",
+    light: "#2d3a6b",
+    dark: "#0f1a3d",
   },
   bg: {
-    peach: "#f9ede3",
+    beige: "#edeae1",
     white: "#ffffff",
     card: "#ffffff",
   },
   accent: {
-    orange: "#ff6b35",
-    pink: "#ffb3d9",
-    blue: "#4ecdc4",
+    red: "#cd2028",
+    blue: "#166c96",
   },
   text: {
     primary: "#1a1a1a",
@@ -130,9 +129,9 @@ export const SHADOWS = {
   inner: "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
   none: "0 0 #0000",
   // Custom shadows from design system
-  soft: "0 4px 20px rgba(86, 52, 214, 0.1)",
+  soft: "0 4px 20px rgba(27, 38, 81, 0.1)",
   card: "0 8px 32px rgba(0, 0, 0, 0.08)",
-  hover: "0 12px 40px rgba(86, 52, 214, 0.15)",
+  hover: "0 12px 40px rgba(27, 38, 81, 0.15)",
 } as const;
 
 export const BREAKPOINTS = {
@@ -235,8 +234,8 @@ export const SITE_CONFIG = {
   title: "Full Stack & AI Developer",
   description:
     "I build web apps and ML tools — React, Node, FastAPI, NLP & Deep Learning.",
-    resumeUrl: "/Ashish_singh_resume.pdf",
-    tagline: "Hello, my name's Ashish Singh. I am a",
+  resumeUrl: "/Ashish_singh_resume.pdf",
+  tagline: "Hello, my name's Ashish Singh. I am a",
 } as const;
 
 // Skills Data
@@ -379,7 +378,7 @@ export const SKILL_CATEGORIES = {
   },
   frameworks: {
     title: "Frameworks",
-    color: "accent-orange",
+    color: "accent-red",
     description: "Frameworks and libraries I use",
   },
   tools: {
@@ -389,7 +388,7 @@ export const SKILL_CATEGORIES = {
   },
   libraries: {
     title: "Libraries",
-    color: "accent-pink",
+    color: "accent-blue",
     description: "Specialized libraries and technologies",
   },
 } as const;

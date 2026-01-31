@@ -52,7 +52,7 @@ const Card: React.FC<CardProps> = ({
         ? {
             y: -8,
             scale: 1.02,
-            boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
+            boxShadow: "0 20px 40px rgba(27, 38, 81, 0.1)",
             transition: { duration: 0.3, ease: "easeOut" },
           }
         : {},

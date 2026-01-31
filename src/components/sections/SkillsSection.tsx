@@ -119,7 +119,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
       aria-labelledby="skills-heading"
     >
       {/* Subtle Dotted Pattern */}
-      <DottedPattern color="#5634d6" opacity={0.05} spacing={35} dotSize={2} />
+      <DottedPattern color="#1b2651" opacity={0.05} spacing={35} dotSize={2} />
 
       <div className="container-xl mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -129,7 +129,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
               <h2 id="skills-heading" className="heading-lg text-primary mb-6">
                 Technical Skills
               </h2>
-              <SketchUnderline color="#5634d6" width="140px" className="mb-8" />
+              <SketchUnderline color="#1b2651" width="140px" className="mb-8" />
               <p className="text-lead text-text-secondary max-w-2xl mx-auto">
                 Technologies and tools I use to build modern web applications
                 and AI-powered systems.
@@ -229,7 +229,7 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
       </div>
 
       {/* Section Divider */}
-      <SectionDivider variant="geometric" color="#5634d6" />
+      <SectionDivider variant="geometric" color="#1b2651" />
     </section>
   );
 };

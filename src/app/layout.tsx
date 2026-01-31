@@ -29,11 +29,11 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#5634d6" />
+        <meta name="theme-color" content="#1b2651" />
         <meta name="color-scheme" content="light" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-bg-peach`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-bg-beige`}
       >
         <LayoutClient>
           {/* Skip links for accessibility - moved here for better positioning */}

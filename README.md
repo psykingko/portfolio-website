@@ -4,7 +4,7 @@ A modern, high-performance personal portfolio website built with Next.js, TypeSc
 
 ## Features
 
-- 🎨 Modern design with soft peach background and deep purple accents
+- 🎨 Modern design with soft beige background and navy blue accents
 - 📱 Fully responsive across desktop, tablet, and mobile
 - ✨ Smooth animations with Framer Motion
 - 🎯 3D isometric elements and micro-interactions
@@ -95,22 +95,44 @@ This project uses:
 
 ## Deployment
 
-### Vercel (Recommended)
+### 🚀 Quick Deploy to Vercel (5 Minutes)
 
-1. Connect your repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+**Fastest way to get your portfolio live with a free `.vercel.app` domain:**
+
+1. **Push to GitHub**
+
+   ```bash
+   git push origin main
+   ```
+
+2. **Deploy to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "Add New Project"
+   - Import your repository
+   - Click "Deploy"
+
+3. **Add Environment Variables**
+   - Go to Settings → Environment Variables
+   - Add: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SITE_NAME`, `CONTACT_EMAIL`, `RESEND_API_KEY`
+   - Redeploy
+
+**📖 Detailed Guides:**
+
+- [⚡ Quick Start (5 min)](./QUICK_START_VERCEL.md)
+- [📚 Full Deployment Guide](./VERCEL_DEPLOYMENT_GUIDE.md)
+- [✅ Deployment Checklist](./DEPLOYMENT_CHECKLIST.md)
+- [🔧 Environment Variables Setup](./VERCEL_ENV_SETUP.md)
 
 ### Other Platforms
 
-The application can be deployed to any platform that supports Next.js:
+The application can also be deployed to:
 
 - Netlify
 - AWS Amplify
 - Railway
 - DigitalOcean App Platform
 
-See [ENVIRONMENT.md](./ENVIRONMENT.md) for platform-specific configuration instructions.
+See deployment guides for platform-specific instructions.
 
 ## Performance
 

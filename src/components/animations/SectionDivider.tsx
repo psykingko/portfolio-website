@@ -15,7 +15,7 @@ interface SectionDividerProps {
 const SectionDivider: React.FC<SectionDividerProps> = ({
   className = "",
   variant = "line",
-  color = "#5634d6",
+  color = "#1b2651",
   animated = true,
 }) => {
   const { prefersReducedMotion } = useReducedMotion();

@@ -62,14 +62,14 @@ async function sendEmail(data: {
     subject: `Portfolio Contact: Message from ${data.name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #5634d6;">New Contact Form Submission</h2>
+        <h2 style="color: #1b2651;">New Contact Form Submission</h2>
         
-        <div style="background: #f9ede3; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <div style="background: #edeae1; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <p><strong>Name:</strong> ${data.name}</p>
           <p><strong>Email:</strong> ${data.email}</p>
         </div>
         
-        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #5634d6;">
+        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #1b2651;">
           <h3>Message:</h3>
           <p style="line-height: 1.6;">${data.message.replace(/\n/g, "<br>")}</p>
         </div>

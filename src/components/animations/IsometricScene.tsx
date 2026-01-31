@@ -113,9 +113,9 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
             <stop offset="100%" stopColor="#ff6b35" />
           </linearGradient>
 
-          <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#ffcce5" />
-            <stop offset="100%" stopColor="#ffb3d9" />
+          <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#4db6e6" />
+            <stop offset="100%" stopColor="#166c96" />
           </linearGradient>
 
           <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -148,7 +148,7 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
           <circle cx="50" cy="50" r="2" fill="url(#primaryGradient)" />
           <circle cx="350" cy="80" r="1.5" fill="url(#orangeGradient)" />
           <circle cx="80" cy="320" r="1" fill="url(#blueGradient)" />
-          <circle cx="320" cy="350" r="2" fill="url(#pinkGradient)" />
+          <circle cx="320" cy="350" r="2" fill="url(#tealGradient)" />
         </motion.g>
 
         {/* Main floating cube - Primary element with parallax */}
@@ -275,7 +275,7 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
         >
           <path
             d="M 100 230 L 120 270 L 80 270 Z"
-            fill="url(#pinkGradient)"
+            fill="url(#tealGradient)"
             filter="url(#softShadow)"
             opacity="0.8"
           />
@@ -321,7 +321,7 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
               cy="250"
               rx="20"
               ry="8"
-              fill="url(#pinkGradient)"
+              fill="url(#tealGradient)"
               opacity="0.9"
             />
             {/* Cylinder body */}
@@ -330,7 +330,7 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
               y="250"
               width="40"
               height="30"
-              fill="url(#pinkGradient)"
+              fill="url(#tealGradient)"
               opacity="0.7"
             />
             {/* Cylinder bottom ellipse */}
@@ -339,7 +339,7 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
               cy="280"
               rx="20"
               ry="8"
-              fill="url(#pinkGradient)"
+              fill="url(#tealGradient)"
               opacity="0.8"
             />
             {/* Cylinder highlights */}
@@ -443,7 +443,7 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
             cx="280"
             cy="120"
             r="8"
-            fill="url(#pinkGradient)"
+            fill="url(#tealGradient)"
             opacity="0.7"
             filter="url(#softShadow)"
           />
@@ -626,7 +626,7 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating particles with enhanced animations */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent-pink rounded-full opacity-60 shadow-sm"
+          className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent-teal rounded-full opacity-60 shadow-sm"
           animate={
             prefersReducedMotion
               ? {}
@@ -699,7 +699,7 @@ export const IsometricScene: React.FC<IsometricSceneProps> = ({
         />
 
         <motion.div
-          className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-accent-pink rounded-full opacity-30"
+          className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-accent-teal rounded-full opacity-30"
           animate={
             prefersReducedMotion
               ? {}

@@ -27,8 +27,7 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
         return "bg-accent-orange/10 text-accent-orange border-accent-orange/20 hover:bg-accent-orange/20 hover:border-accent-orange/30";
       case "accent-blue":
         return "bg-accent-blue/10 text-accent-blue border-accent-blue/20 hover:bg-accent-blue/20 hover:border-accent-blue/30";
-      case "accent-pink":
-        return "bg-accent-pink/10 text-accent-pink border-accent-pink/20 hover:bg-accent-pink/20 hover:border-accent-pink/30";
+
       default:
         return "bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 hover:border-primary/30";
     }
@@ -93,12 +92,12 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({
           {
             background: `radial-gradient(circle, ${
               categoryColor === "primary"
-                ? "#5634d6"
+                ? "#1b2651"
                 : categoryColor === "accent-orange"
-                  ? "#ff6b35"
+                  ? "#cd2028"
                   : categoryColor === "accent-blue"
-                    ? "#4ecdc4"
-                    : "#ffb3d9"
+                    ? "#166c96"
+                    : "#1b2651"
             }20 0%, transparent 70%)`,
           } as React.CSSProperties
         }

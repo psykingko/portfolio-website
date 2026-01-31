@@ -22,11 +22,10 @@ The shadow system provides multiple levels of depth and visual hierarchy:
 
 #### Colored Shadows
 
-- `shadow-primary` - Primary color shadow (purple theme)
+- `shadow-primary` - Primary color shadow (navy theme)
 - `shadow-primary-hover` - Enhanced primary shadow for interactions
-- `shadow-accent-orange` - Orange accent shadow
-- `shadow-accent-pink` - Pink accent shadow
-- `shadow-accent-blue` - Blue accent shadow
+- `shadow-accent-red` - Red accent shadow
+- `shadow-accent-teal` - Teal accent shadow
 
 #### Special Effects
 

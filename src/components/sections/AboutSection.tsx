@@ -139,7 +139,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ className }) => {
       </div>
 
       {/* Section Divider */}
-      <SectionDivider variant="geometric" color="#5634d6" />
+      <SectionDivider variant="geometric" color="#1b2651" />
     </section>
   );
 };

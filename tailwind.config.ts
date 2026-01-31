@@ -23,7 +23,7 @@ const config: Config = {
           dark: "var(--color-primary-dark)",
         },
         bg: {
-          peach: "var(--color-bg-peach)",
+          beige: "var(--color-bg-beige)",
           white: "var(--color-bg-white)",
           card: "var(--color-bg-card)",
           "playful-white": "#FCFCFF", // Warm white with personality
@@ -31,16 +31,16 @@ const config: Config = {
           "paper-white": "#FAFAF7", // Paper-like white
         },
         accent: {
-          orange: "var(--color-accent-orange)",
-          pink: "var(--color-accent-pink)",
-          blue: "var(--color-accent-blue)",
+          red: "var(--color-accent-red)",
+          teal: "var(--color-accent-teal)",
           lavender: "#E8E4FF", // Light lavender for blobs
-          peach: "#FFE5D9", // Light peach for blobs
+          beige: "#FFE5D9", // Light beige for blobs
         },
         text: {
           primary: "var(--color-text-primary)",
           secondary: "var(--color-text-secondary)",
           light: "var(--color-text-light)",
+          muted: "var(--color-text-muted)",
         },
       },
       fontFamily: {
@@ -89,13 +89,13 @@ const config: Config = {
         intense: "var(--shadow-intense)",
         primary: "var(--shadow-primary)",
         "primary-hover": "var(--shadow-primary-hover)",
-        "accent-orange": "var(--shadow-accent-orange)",
-        "accent-pink": "var(--shadow-accent-pink)",
-        "accent-blue": "var(--shadow-accent-blue)",
+        "accent-red": "var(--shadow-accent-red)",
+        "accent-teal": "var(--shadow-accent-teal)",
         "inset-soft": "var(--shadow-inset-soft)",
         "inset-medium": "var(--shadow-inset-medium)",
         "glow-primary": "var(--shadow-glow-primary)",
-        "glow-accent": "var(--shadow-glow-accent)",
+        "glow-accent-red": "var(--shadow-glow-accent-red)",
+        "glow-accent-teal": "var(--shadow-glow-accent-teal)",
       },
       maxWidth: {
         "container-sm": "var(--container-sm)",

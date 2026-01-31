@@ -14,7 +14,7 @@ interface DottedPatternProps {
 }
 
 const DottedPattern: React.FC<DottedPatternProps> = ({
-  color = "#5634d6",
+  color = "#1b2651",
   opacity = 0.06,
   spacing = 30,
   dotSize = 2,

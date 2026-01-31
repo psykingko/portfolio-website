@@ -31,7 +31,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     >
       {/* Organic Blobs */}
       <OrganicBlob
-        color="#5634d6"
+        color="#1b2651"
         opacity={0.08}
         size="xl"
         position={{ top: "5%", left: "-10%" }}
@@ -118,7 +118,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       </div>
 
       {/* Section Divider */}
-      <SectionDivider variant="geometric" color="#5634d6" />
+      <SectionDivider variant="geometric" color="#1b2651" />
     </section>
   );
 };

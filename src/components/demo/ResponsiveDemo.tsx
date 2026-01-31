@@ -46,7 +46,7 @@ const ResponsiveDemo: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-bg-peach p-4">
+    <div className="min-h-screen bg-bg-beige p-4">
       {/* Header */}
       <div className="responsive-container mb-8">
         <h1
@@ -165,7 +165,7 @@ const ResponsiveDemo: React.FC = () => {
               </div>
             </div>
             <div className="hero-visual">
-              <div className="aspect-square bg-gradient-to-br from-accent-pink to-accent-orange rounded-2xl flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-accent-teal to-accent-red rounded-2xl flex items-center justify-center">
                 <div className="text-white text-center">
                   <div className="text-4xl mb-2">🎨</div>
                   <p className="font-semibold">Visual Element</p>
@@ -218,7 +218,7 @@ const ResponsiveDemo: React.FC = () => {
                 <span className="hide-mobile px-3 py-1 bg-blue-500 text-white rounded">
                   Hidden on Mobile
                 </span>
-                <span className="show-tablet-up px-3 py-1 bg-purple-500 text-white rounded">
+                <span className="show-tablet-up px-3 py-1 bg-primary text-white rounded">
                   Tablet & Up
                 </span>
                 <span className="show-desktop-up px-3 py-1 bg-orange-500 text-white rounded">

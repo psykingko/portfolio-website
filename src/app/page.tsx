@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <main id="main-content" className="bg-bg-peach">
+      <main id="main-content" className="bg-bg-beige">
         <HeroSection
           name={SITE_CONFIG.tagline}
           title={SITE_CONFIG.title}

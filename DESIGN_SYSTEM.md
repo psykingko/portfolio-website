@@ -16,21 +16,20 @@ The design system is built using Tailwind CSS v4 with custom design tokens defin
 
 ### Primary Colors
 
-- **Primary**: `#5634d6` - Deep purple for primary actions and branding
-- **Primary Light**: `#7b5ae6` - Lighter variant for hover states
-- **Primary Dark**: `#4527b8` - Darker variant for active states
+- **Primary**: `#1b2651` - Dark navy for primary actions and branding
+- **Primary Light**: `#2d3a6b` - Lighter variant for hover states
+- **Primary Dark**: `#0f1a3d` - Darker variant for active states
 
 ### Background Colors
 
-- **Peach**: `#f9ede3` - Main background color for the site
+- **Beige**: `#edeae1` - Main background color for the site
 - **White**: `#ffffff` - Card backgrounds and content areas
 - **Card**: `#ffffff` - Specific card background color
 
 ### Accent Colors
 
-- **Orange**: `#ff6b35` - Bright orange for highlights and CTAs
-- **Pink**: `#ffb3d9` - Pastel pink for decorative elements
-- **Blue**: `#4ecdc4` - Teal blue for secondary accents
+- **Red**: `#cd2028` - Bright red for highlights and CTAs
+- **Teal**: `#166c96` - Teal blue for secondary accents
 
 ### Text Colors
 
@@ -195,7 +194,7 @@ Uses a consistent 0.25rem (4px) base unit:
 
 ```tsx
 // Using Tailwind classes
-<div className="bg-bg-peach text-text-primary">
+<div className="bg-bg-beige text-text-primary">
   <h1 className="heading-xl text-primary">Title</h1>
   <p className="body-lg text-text-secondary">Description</p>
 </div>
@@ -213,7 +212,7 @@ Uses a consistent 0.25rem (4px) base unit:
 import { COLORS, SPACING, getColor } from "@/utils/constants";
 
 const styles = {
-  backgroundColor: COLORS.bg.peach,
+  backgroundColor: COLORS.bg.beige,
   padding: SPACING[4],
   color: getColor("text.primary"),
 };

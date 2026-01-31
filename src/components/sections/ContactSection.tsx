@@ -50,7 +50,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ className = "" }) => {
             <h2 id="contact-heading" className="heading-lg text-primary mb-6">
               Get In Touch
             </h2>
-            <SketchUnderline color="#5634d6" width="130px" className="mb-6" />
+            <SketchUnderline color="#1b2651" width="130px" className="mb-6" />
             <p className="text-lead text-text-secondary max-w-2xl mx-auto">
               Ready to bring your ideas to life? Let's discuss your project and
               explore how we can work together.
@@ -385,7 +385,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ className = "" }) => {
       </div>
 
       {/* Section Divider */}
-      <SectionDivider variant="geometric" color="#5634d6" />
+      <SectionDivider variant="geometric" color="#1b2651" />
     </section>
   );
 };

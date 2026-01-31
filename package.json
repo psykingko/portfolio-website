@@ -17,6 +17,7 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "validate-env": "node scripts/validate-env.js",
+    "verify-deploy": "node verify-deployment-ready.js",
     "prepare": "husky"
   },
   "dependencies": {

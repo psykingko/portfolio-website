@@ -16,18 +16,19 @@ a:focus-visible {
 }
 
 :root {
-  /* Modern Color System - 3-color rule */
-  --color-primary: #6d5df6;
-  --color-primary-light: #8b7df7;
-  --color-primary-dark: #5a4ce0;
+  /* Modern Color System - Navy and Red Palette */
+  --color-primary: #1b2651;
+  --color-primary-light: #2d3a6b;
+  --color-primary-dark: #0f1a3d;
 
-  /* Background Colors - Modern neutral palette */
-  --color-bg-peach: #fafafa;
+  /* Background Colors - Beige neutral palette */
+  --color-bg-beige: #edeae1;
   --color-bg-white: #ffffff;
   --color-bg-card: #ffffff;
 
-  /* Single Accent Color */
-  --color-accent-orange: #ff7849;
+  /* Accent Colors */
+  --color-accent-red: #cd2028;
+  --color-accent-teal: #166c96;
 
   /* Modern Text Colors */
   --color-text-primary: #0f172a;
@@ -35,14 +36,10 @@ a:focus-visible {
   --color-text-light: #ffffff;
   --color-text-muted: #94a3b8;
 
-  /* Remove old accent colors - keeping only orange */
-  /* --color-accent-pink: #ffb3d9; */
-  /* --color-accent-blue: #4ecdc4; */
-
-  /* Enhanced Shadow System - Less borders, more shadows */
-  --shadow-soft: 0 4px 20px rgba(109, 93, 246, 0.08);
+  /* Enhanced Shadow System - Navy-based shadows */
+  --shadow-soft: 0 4px 20px rgba(27, 38, 81, 0.08);
   --shadow-card: 0 8px 32px rgba(15, 23, 42, 0.06);
-  --shadow-hover: 0 12px 40px rgba(109, 93, 246, 0.12);
+  --shadow-hover: 0 12px 40px rgba(27, 38, 81, 0.12);
 
   /* Additional Shadow Variants */
   --shadow-subtle: 0 2px 8px rgba(15, 23, 42, 0.04);
@@ -51,17 +48,19 @@ a:focus-visible {
   --shadow-intense: 0 24px 64px rgba(15, 23, 42, 0.16);
 
   /* Colored Shadows */
-  --shadow-primary: 0 8px 32px rgba(109, 93, 246, 0.12);
-  --shadow-primary-hover: 0 12px 40px rgba(109, 93, 246, 0.18);
-  --shadow-accent-orange: 0 8px 32px rgba(255, 120, 73, 0.12);
+  --shadow-primary: 0 8px 32px rgba(27, 38, 81, 0.12);
+  --shadow-primary-hover: 0 12px 40px rgba(27, 38, 81, 0.18);
+  --shadow-accent-red: 0 8px 32px rgba(205, 32, 40, 0.12);
+  --shadow-accent-teal: 0 8px 32px rgba(22, 108, 150, 0.12);
 
   /* Inner Shadows */
   --shadow-inset-soft: inset 0 2px 8px rgba(15, 23, 42, 0.06);
   --shadow-inset-medium: inset 0 4px 12px rgba(15, 23, 42, 0.1);
 
   /* Glow Effects */
-  --shadow-glow-primary: 0 0 20px rgba(109, 93, 246, 0.3);
-  --shadow-glow-accent: 0 0 20px rgba(255, 120, 73, 0.3);
+  --shadow-glow-primary: 0 0 20px rgba(27, 38, 81, 0.3);
+  --shadow-glow-accent-red: 0 0 20px rgba(205, 32, 40, 0.3);
+  --shadow-glow-accent-teal: 0 0 20px rgba(22, 108, 150, 0.3);
 }
 
 @theme inline {
@@ -70,13 +69,12 @@ a:focus-visible {
   --color-primary-light: var(--color-primary-light);
   --color-primary-dark: var(--color-primary-dark);
 
-  --color-bg-peach: var(--color-bg-peach);
+  --color-bg-beige: var(--color-bg-beige);
   --color-bg-white: var(--color-bg-white);
   --color-bg-card: var(--color-bg-card);
 
-  --color-accent-orange: var(--color-accent-orange);
-  --color-accent-pink: var(--color-accent-pink);
-  --color-accent-blue: var(--color-accent-blue);
+  --color-accent-red: var(--color-accent-red);
+  --color-accent-teal: var(--color-accent-teal);
 
   --color-text-primary: var(--color-text-primary);
   --color-text-secondary: var(--color-text-secondary);
@@ -229,13 +227,13 @@ a:focus-visible {
   --shadow-intense: var(--shadow-intense);
   --shadow-primary: var(--shadow-primary);
   --shadow-primary-hover: var(--shadow-primary-hover);
-  --shadow-accent-orange: var(--shadow-accent-orange);
-  --shadow-accent-pink: var(--shadow-accent-pink);
-  --shadow-accent-blue: var(--shadow-accent-blue);
+  --shadow-accent-red: var(--shadow-accent-red);
+  --shadow-accent-teal: var(--shadow-accent-teal);
   --shadow-inset-soft: var(--shadow-inset-soft);
   --shadow-inset-medium: var(--shadow-inset-medium);
   --shadow-glow-primary: var(--shadow-glow-primary);
-  --shadow-glow-accent: var(--shadow-glow-accent);
+  --shadow-glow-accent-red: var(--shadow-glow-accent-red);
+  --shadow-glow-accent-teal: var(--shadow-glow-accent-teal);
 
   /* Container Sizes */
   --container-sm: 640px;
@@ -279,7 +277,7 @@ a:focus-visible {
 }
 
 body {
-  background: var(--color-bg-peach);
+  background: var(--color-bg-beige);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   line-height: var(--line-height-normal);
@@ -365,10 +363,76 @@ html {
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   :root {
+    /* Enhanced text colors for high contrast */
     --color-text-primary: #000000;
-    --color-text-secondary: #333333;
-    --color-primary: #0000ff;
-    --color-primary-dark: #000080;
+    --color-text-secondary: #000000;
+    --color-text-light: #ffffff;
+    --color-text-muted: #000000;
+
+    /* High contrast primary colors - maintain navy but increase contrast */
+    --color-primary: #000080;
+    --color-primary-light: #0000cc;
+    --color-primary-dark: #000040;
+
+    /* High contrast background colors */
+    --color-bg-beige: #ffffff;
+    --color-bg-white: #ffffff;
+    --color-bg-card: #ffffff;
+
+    /* High contrast accent colors - enhanced for AAA compliance */
+    --color-accent-red: #990000;
+    --color-accent-teal: #004466;
+
+    /* Enhanced shadows for high contrast */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.25);
+    --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+    --shadow-primary: 0 8px 32px rgba(0, 0, 128, 0.4);
+    --shadow-primary-hover: 0 12px 40px rgba(0, 0, 128, 0.5);
+    --shadow-accent-red: 0 8px 32px rgba(204, 0, 0, 0.4);
+    --shadow-accent-teal: 0 8px 32px rgba(0, 102, 153, 0.4);
+
+    /* Enhanced glow effects */
+    --shadow-glow-primary: 0 0 20px rgba(0, 0, 128, 0.8);
+    --shadow-glow-accent-red: 0 0 20px rgba(204, 0, 0, 0.8);
+    --shadow-glow-accent-teal: 0 0 20px rgba(0, 102, 153, 0.8);
+  }
+
+  /* Ensure focus indicators are highly visible */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid #000080 !important;
+    outline-offset: 2px !important;
+    box-shadow:
+      0 0 0 1px #ffffff,
+      0 0 0 4px #000080 !important;
+  }
+
+  /* Enhanced button contrast */
+  button,
+  .btn {
+    border: 2px solid currentColor !important;
+  }
+
+  /* Enhanced link visibility */
+  a {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+  }
+
+  /* Error and success states with high contrast */
+  .error,
+  [aria-invalid="true"] {
+    color: #990000 !important;
+    border-color: #990000 !important;
+  }
+
+  .success {
+    color: #006600 !important;
+    border-color: #006600 !important;
   }
 }
 

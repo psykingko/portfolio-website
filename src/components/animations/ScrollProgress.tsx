@@ -12,7 +12,7 @@ interface ScrollProgressProps {
 
 const ScrollProgress: React.FC<ScrollProgressProps> = ({
   className = "",
-  color = "#5634d6",
+  color = "#1b2651",
   height = 4,
   position = "top",
 }) => {
@@ -48,7 +48,7 @@ export const CircularScrollProgress: React.FC<{
   size?: number;
   strokeWidth?: number;
   color?: string;
-}> = ({ className = "", size = 60, strokeWidth = 4, color = "#5634d6" }) => {
+}> = ({ className = "", size = 60, strokeWidth = 4, color = "#1b2651" }) => {
   const { scrollYProgress } = useScroll();
   const pathLength = useSpring(scrollYProgress, {
     stiffness: 100,

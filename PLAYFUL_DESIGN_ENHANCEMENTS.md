@@ -26,12 +26,12 @@ Soft gradient blobs add modern, playful personality:
 **About Section**:
 
 - Light lavender blob (top-right, 15% opacity)
-- Light peach blob (bottom-left, 12% opacity)
+- Light beige blob (bottom-left, 12% opacity)
 
 **Projects Section**:
 
-- Large purple blob (top-left, 8% opacity)
-- Orange blob (bottom-right, 6% opacity)
+- Large navy blob (top-left, 8% opacity)
+- Red blob (bottom-right, 6% opacity)
 
 **Features**:
 
@@ -47,7 +47,7 @@ Skills section features an animated dotted grid:
 - Spacing: 35px between dots
 - Opacity: 5% (very subtle)
 - Gentle pulse animation
-- Purple color matching brand
+- Navy color matching brand
 
 ### 4. **Hand-Drawn Sketch Accents** ✏️
 
@@ -137,7 +137,7 @@ bg: {
 }
 accent: {
   lavender: "#E8E4FF",
-  peach: "#FFE5D9",
+  beige: "#FFE5D9",
 }
 ```
 

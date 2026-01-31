@@ -20,7 +20,7 @@ interface OrganicBlobProps {
 }
 
 const OrganicBlob: React.FC<OrganicBlobProps> = ({
-  color = "#5634d6",
+  color = "#1b2651",
   opacity = 0.1,
   size = "md",
   position = { top: "10%", right: "5%" },

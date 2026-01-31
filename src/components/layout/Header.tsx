@@ -53,15 +53,15 @@ const Header: React.FC<HeaderProps> = ({ className = "" }) => {
         aria-label="Site header"
       >
         <div className="container-xl">
-          <div className="flex items-center justify-between py-5">
-            {/* Logo/Brand */}
+          <div className="flex items-center justify-between py-6">
+            {/* Minimal Logo - Single Letter */}
             <div className="flex items-center">
               <a
                 href="#hero"
-                className="text-xl font-bold text-primary hover:text-primary-dark transition-colors duration-200 focus:outline-none focus-visible:outline-none"
+                className="text-3xl font-bold text-primary hover:text-primary-dark transition-colors duration-200 focus:outline-none focus-visible:outline-none"
                 aria-label="Ashish Singh - Go to top"
               >
-                <span className="font-display">Ashish Singh</span>
+                <span className="font-display tracking-tight">A</span>
               </a>
             </div>
 

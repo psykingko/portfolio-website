@@ -32,7 +32,6 @@ export interface BadgeProps extends BaseComponentProps {
     | "primary"
     | "secondary"
     | "accent-orange"
-    | "accent-pink"
     | "accent-blue";
   size?: "sm" | "md" | "lg";
   onClick?: () => void;
