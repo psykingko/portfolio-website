@@ -17,7 +17,10 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "validate-env": "node scripts/validate-env.js",
-    "verify-deploy": "node verify-deployment-ready.js",
+    "analyze": "cross-env ANALYZE=true next build",
+    "lighthouse": "lighthouse http://localhost:3000 --view --output=html --output-path=./lighthouse-report.html",
+    "check-perf": "node scripts/check-performance.js",
+    "prebuild": "npm run check-perf",
     "prepare": "husky"
   },
   "dependencies": {

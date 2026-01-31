@@ -1,190 +1,345 @@
 # Ashish Singh - Portfolio Website
 
-A modern, high-performance personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features responsive design, animated 3D elements, and a functional contact form.
+A modern, high-performance personal portfolio website built with Next.js 16, TypeScript, and Tailwind CSS 4. Features responsive design, smooth animations, 3D isometric elements, and a functional contact form.
 
-## Features
+## ✨ Features
 
-- 🎨 Modern design with soft beige background and navy blue accents
-- 📱 Fully responsive across desktop, tablet, and mobile
-- ✨ Smooth animations with Framer Motion
-- 🎯 3D isometric elements and micro-interactions
-- 📧 Working contact form with email integration
-- ♿ Accessibility compliant (WCAG 2.1 AA)
-- 🚀 Optimized for performance (Lighthouse scores ≥80)
-- 🔍 SEO-friendly with structured data
+- 🎨 **Modern Design** - Soft beige background with navy blue accents and playful micro-interactions
+- 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
+- ✨ **Smooth Animations** - Powered by Framer Motion for delightful user experience
+- 🎯 **3D Isometric Elements** - Interactive geometric shapes and visual effects
+- 📧 **Contact Form** - Integrated with EmailJS for direct communication
+- ♿ **Accessibility Compliant** - WCAG 2.1 AA standards with keyboard navigation
+- 🚀 **Performance Optimized** - Fast loading times and efficient rendering
+- 🔍 **SEO-Friendly** - Proper meta tags and structured data
+- 🎭 **Dark Mode Ready** - Theme color support for modern browsers
 
-## Quick Start
+## 🚀 Quick Start
 
-1. **Clone and install dependencies:**
+### Prerequisites
+
+- Node.js 18+ and npm/yarn/pnpm
+- Git
+
+### Installation
+
+1. **Clone the repository:**
 
    ```bash
    git clone <repository-url>
    cd portfolio-website
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
    npm install
    ```
 
-2. **Set up environment variables:**
+3. **Set up environment variables:**
 
    ```bash
    cp .env.example .env.local
-   # Edit .env.local with your actual values
    ```
 
-3. **Run the development server:**
+   Edit `.env.local` with your values:
+
+   ```env
+   NEXT_PUBLIC_SITE_URL=http://localhost:3000
+   NEXT_PUBLIC_SITE_NAME=Ashish Singh Portfolio
+   CONTACT_EMAIL=your-email@example.com
+
+   # EmailJS Configuration (for contact form)
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
+4. **Run the development server:**
 
    ```bash
    npm run dev
    ```
 
-4. **Open [http://localhost:3000](http://localhost:3000) in your browser**
+5. **Open [http://localhost:3000](http://localhost:3000) in your browser**
 
-## Environment Configuration
-
-The application requires several environment variables for full functionality. See [ENVIRONMENT.md](./ENVIRONMENT.md) for detailed configuration instructions.
-
-### Required Variables
-
-- `NEXT_PUBLIC_SITE_URL` - Your website URL
-- `CONTACT_EMAIL` - Email for receiving contact form submissions
-
-### Optional Variables
-
-- `SENDGRID_API_KEY` - For email sending functionality
-- `NEXT_PUBLIC_GA_MEASUREMENT_ID` - For Google Analytics
-- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` - For spam protection
-
-## Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-- `npm run type-check` - Run TypeScript type checking
-- `npm run test` - Run unit tests
-- `npm run test:e2e` - Run end-to-end tests
-
-### Project Structure
+## 📁 Project Structure
 
 ```
-src/
-├── app/                 # Next.js app directory
-├── components/          # React components
-│   ├── layout/         # Layout components
-│   ├── sections/       # Page sections
-│   ├── ui/            # Reusable UI components
-│   └── animations/    # Animation components
-├── hooks/              # Custom React hooks
-├── utils/              # Utility functions
-├── styles/             # CSS files
-└── types/              # TypeScript type definitions
+portfolio-website/
+├── public/                      # Static assets
+│   ├── favicon/                # Favicon files
+│   ├── projects/               # Project images
+│   └── Ashish_singh_resume.pdf
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── api/               # API routes
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── page.tsx           # Home page
+│   │   └── globals.css        # Global styles
+│   ├── components/
+│   │   ├── animations/        # Animation components
+│   │   │   ├── IsometricScene.tsx
+│   │   │   └── SectionDivider.tsx
+│   │   ├── layout/            # Layout components
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── LayoutClient.tsx
+│   │   ├── sections/          # Page sections
+│   │   │   ├── HeroSection.tsx
+│   │   │   ├── AboutSection.tsx
+│   │   │   ├── SkillsSection.tsx
+│   │   │   ├── ProjectsSection.tsx
+│   │   │   └── ContactSection.tsx
+│   │   └── ui/                # Reusable UI components
+│   │       ├── Button.tsx
+│   │       ├── Card.tsx
+│   │       └── Input.tsx
+│   ├── data/                  # Static data
+│   │   └── projects.ts
+│   ├── hooks/                 # Custom React hooks
+│   │   └── useScrollProgress.ts
+│   ├── schemas/               # Zod validation schemas
+│   │   └── contact.ts
+│   ├── styles/                # Additional styles
+│   ├── types/                 # TypeScript types
+│   └── utils/                 # Utility functions
+│       └── constants.ts
+├── .env.example               # Environment variables template
+├── .env.local                 # Local environment variables (gitignored)
+├── .gitignore
+├── .prettierrc                # Prettier configuration
+├── eslint.config.mjs          # ESLint configuration
+├── next.config.ts             # Next.js configuration
+├── package.json
+├── postcss.config.mjs         # PostCSS configuration
+├── tailwind.config.ts         # Tailwind CSS configuration
+├── tsconfig.json              # TypeScript configuration
+└── vercel.json                # Vercel deployment config
 ```
 
-### Code Quality
+## �️ Available Scripts
 
-This project uses:
+```bash
+# Development
+npm run dev              # Start development server
+npm run build            # Build for production
+npm run start            # Start production server
 
-- **TypeScript** for type safety
-- **ESLint** for code linting
-- **Prettier** for code formatting
-- **Husky** for pre-commit hooks
-- **Jest** for unit testing
-- **Playwright** for E2E testing
+# Code Quality
+npm run lint             # Run ESLint and auto-fix issues
+npm run lint:check       # Check for linting errors
+npm run format           # Format code with Prettier
+npm run format:check     # Check code formatting
+npm run type-check       # Run TypeScript type checking
 
-## Deployment
+# Validation
+npm run validate-env     # Validate environment variables
+```
 
-### 🚀 Quick Deploy to Vercel (5 Minutes)
+## 🎨 Tech Stack
 
-**Fastest way to get your portfolio live with a free `.vercel.app` domain:**
+### Core
 
-1. **Push to GitHub**
+- **Next.js 16** - React framework with App Router
+- **React 19** - UI library
+- **TypeScript 5** - Type safety
+- **Tailwind CSS 4** - Utility-first CSS framework
 
-   ```bash
-   git push origin main
-   ```
+### UI & Animations
 
-2. **Deploy to Vercel**
+- **Framer Motion** - Animation library
+- **Lucide React** - Icon library
+- **React Hook Form** - Form management
+- **Zod** - Schema validation
+
+### Development Tools
+
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **Husky** - Git hooks
+- **Lint-staged** - Pre-commit linting
+
+### Services
+
+- **EmailJS** - Contact form email delivery
+- **Vercel** - Hosting and deployment
+
+## 🌐 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. **Push your code to GitHub**
+
+2. **Import to Vercel:**
    - Go to [vercel.com](https://vercel.com)
    - Click "Add New Project"
-   - Import your repository
+   - Import your GitHub repository
+   - Configure environment variables
    - Click "Deploy"
 
-3. **Add Environment Variables**
-   - Go to Settings → Environment Variables
-   - Add: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SITE_NAME`, `CONTACT_EMAIL`, `RESEND_API_KEY`
-   - Redeploy
-
-**📖 Detailed Guides:**
-
-- [⚡ Quick Start (5 min)](./QUICK_START_VERCEL.md)
-- [📚 Full Deployment Guide](./VERCEL_DEPLOYMENT_GUIDE.md)
-- [✅ Deployment Checklist](./DEPLOYMENT_CHECKLIST.md)
-- [🔧 Environment Variables Setup](./VERCEL_ENV_SETUP.md)
+3. **Add Environment Variables in Vercel:**
+   - Go to Project Settings → Environment Variables
+   - Add all variables from `.env.example`
+   - Redeploy if needed
 
 ### Other Platforms
 
-The application can also be deployed to:
+The application can be deployed to:
 
-- Netlify
-- AWS Amplify
-- Railway
-- DigitalOcean App Platform
+- **Netlify** - Similar to Vercel
+- **AWS Amplify** - AWS hosting
+- **Railway** - Container-based hosting
+- **DigitalOcean App Platform** - Managed hosting
 
-See deployment guides for platform-specific instructions.
+## 📧 Contact Form Setup
 
-## Performance
+The contact form uses EmailJS for email delivery. To set it up:
 
-The website is optimized for performance with:
+1. **Create an EmailJS account** at [emailjs.com](https://www.emailjs.com/)
 
-- Code splitting and lazy loading
-- Image optimization with Next.js Image component
-- Bundle size optimization
-- Critical CSS inlining
-- Efficient animations with Framer Motion
+2. **Create an email service** (Gmail, Outlook, etc.)
 
-Target metrics:
+3. **Create an email template** with these variables:
+   - `{{from_name}}` - Sender's name
+   - `{{from_email}}` - Sender's email
+   - `{{message}}` - Message content
 
-- Lighthouse Performance: ≥80
-- First Contentful Paint: <1.2s
-- Bundle size: <200KB gzipped
+4. **Get your credentials:**
+   - Service ID
+   - Template ID
+   - Public Key
 
-## Accessibility
+5. **Add to `.env.local`:**
+   ```env
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
 
-The website follows WCAG 2.1 AA guidelines:
+## 🎯 Key Sections
 
-- Semantic HTML structure
-- Proper ARIA labels and roles
+### Hero Section
+
+- Animated introduction with name and title
+- Call-to-action buttons (View Projects, Contact)
+- 3D isometric scene with floating geometric shapes
+
+### About Section
+
+- Professional summary
+- Background and expertise
+- Animated section dividers
+
+### Skills Section
+
+- Technical skills organized by category
+- Frontend, Backend, AI/ML, and Tools
+- Interactive skill cards with hover effects
+
+### Projects Section
+
+- Featured projects with images
+- Project descriptions and tech stacks
+- Links to live demos and GitHub repositories
+
+### Contact Section
+
+- Contact form with validation
+- Email and social media links
+- Form submission with EmailJS integration
+
+## 🎨 Design System
+
+### Colors
+
+- **Primary**: Navy Blue (#1b2651)
+- **Secondary**: Soft Beige (#f5f1e8)
+- **Accent**: Coral (#ff6b6b)
+- **Text**: Dark Gray (#2d3748)
+
+### Typography
+
+- **Headings**: Geist Sans
+- **Body**: Geist Sans
+- **Code**: Geist Mono
+
+### Spacing
+
+- Consistent spacing scale (4px base unit)
+- Responsive padding and margins
+- Section spacing optimized for readability
+
+## ♿ Accessibility
+
+- Semantic HTML5 elements
+- ARIA labels and roles
 - Keyboard navigation support
-- Screen reader compatibility
-- Color contrast compliance
+- Skip to main content link
+- Color contrast compliance (WCAG AA)
+- Screen reader friendly
 - Reduced motion support
 
-## Browser Support
+## 🚀 Performance
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- Code splitting and lazy loading
+- Image optimization with Next.js Image
+- Efficient animations with Framer Motion
+- Minimal bundle size
+- Fast page loads
 
-## Contributing
+## 🔧 Customization
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
+### Update Personal Information
 
-## License
+1. **Edit constants:**
+
+   ```typescript
+   // src/utils/constants.ts
+   export const SITE_CONFIG = {
+     name: "Your Name",
+     title: "Your Title",
+     email: "your-email@example.com",
+     // ...
+   };
+   ```
+
+2. **Update projects:**
+
+   ```typescript
+   // src/data/projects.ts
+   export const projects = [
+     {
+       title: "Project Name",
+       description: "Project description",
+       // ...
+     },
+   ];
+   ```
+
+3. **Replace images:**
+   - Add project images to `public/projects/`
+   - Update resume PDF in `public/`
+   - Update favicon in `public/favicon/`
+
+### Modify Styling
+
+- Edit `tailwind.config.ts` for theme customization
+- Modify `src/app/globals.css` for global styles
+- Update component styles in respective files
+
+## 📝 License
 
 This project is private and proprietary. All rights reserved.
 
-## Contact
+## 👤 Contact
 
-For questions or support, please contact:
+**Ashish Singh**
 
 - Email: singhashish9599@gmail.com
-- LinkedIn: [Ashish Singh](https://linkedin.com/in/ashish-singh)
-- GitHub: [ashish-singh](https://github.com/ashish-singh)
+- LinkedIn: [linkedin.com/in/ashish-singh](https://linkedin.com/in/ashish-singh)
+- GitHub: [github.com/ashish-singh](https://github.com/ashish-singh)
+
+---
+
+Built with ❤️ using Next.js and TypeScript

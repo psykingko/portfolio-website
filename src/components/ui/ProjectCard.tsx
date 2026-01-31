@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/utils";
+import { getTechStackDisplay } from "@/utils/projects";
 import Card from "./Card";
 import Badge from "./Badge";
 import Button from "./Button";
@@ -104,16 +105,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {/* Tech Stack */}
           <div className="tech-stack mb-4">
             <div className="flex flex-wrap gap-2">
-              {techStack.map((tech, index) => (
-                <Badge
-                  key={index}
-                  variant="skill"
-                  size="sm"
-                  className="text-xs"
-                >
-                  {tech}
-                </Badge>
-              ))}
+              {(() => {
+                const { visible, remaining } = getTechStackDisplay(
+                  techStack,
+                  5
+                );
+                return (
+                  <>
+                    {visible.map((tech, index) => (
+                      <Badge
+                        key={index}
+                        variant="skill"
+                        size="sm"
+                        className="text-xs"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                    {remaining > 0 && (
+                      <span className="px-2 py-1 text-xs bg-gray-100 text-text-secondary rounded">
+                        + {remaining} more
+                      </span>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           </div>
 

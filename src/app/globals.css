@@ -2,6 +2,27 @@
 @import "../styles/components.css";
 @import "../styles/responsive.css";
 
+/* Performance Optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU Acceleration for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize repaints */
+img,
+video,
+iframe {
+  content-visibility: auto;
+}
+
 /* Remove borders from all links globally */
 a {
   border: 0 !important;

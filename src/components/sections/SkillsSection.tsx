@@ -10,6 +10,7 @@ import { HoverLift } from "../animations/MicroInteractions";
 import SectionDivider from "../animations/SectionDivider";
 import DottedPattern from "../animations/DottedPattern";
 import SketchUnderline from "../animations/SketchUnderline";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 import {
   Code2,
   Layers,
@@ -97,6 +98,8 @@ const getSkillIcon = (skillName: string) => {
 };
 
 const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
+  const { prefersReducedMotion } = useReducedMotion();
+
   // Group skills by category
   const groupedSkills = SKILLS_DATA.reduce(
     (acc, skill) => {
@@ -189,10 +192,14 @@ const SkillsSection: React.FC<SkillsSectionProps> = ({ className }) => {
                               >
                                 <motion.div
                                   className="w-8 h-8 rounded-lg bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:bg-primary group-hover:scale-110"
-                                  whileHover={{
-                                    rotate: [0, -5, 5, -5, 0],
-                                    transition: { duration: 0.5 },
-                                  }}
+                                  whileHover={
+                                    prefersReducedMotion
+                                      ? {}
+                                      : {
+                                          rotate: [0, -5, 5, -5, 0],
+                                          transition: { duration: 0.5 },
+                                        }
+                                  }
                                 >
                                   <span
                                     className="text-white transition-all duration-200 group-hover:scale-110"

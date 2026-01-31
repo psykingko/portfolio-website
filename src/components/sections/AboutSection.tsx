@@ -1,25 +1,49 @@
 "use client";
 
 import React from "react";
-import Card from "../ui/Card";
 import { cn } from "@/utils/cn";
+import { Briefcase, Code2, Trophy } from "lucide-react";
 import ScrollReveal from "../animations/ScrollReveal";
-import { HoverLift } from "../animations/MicroInteractions";
 import SectionDivider from "../animations/SectionDivider";
 import OrganicBlob from "../animations/OrganicBlob";
-import SketchUnderline from "../animations/SketchUnderline";
 import GradientNoise from "../animations/GradientNoise";
+import SectionHeader from "../ui/SectionHeader";
+import HighlightCard from "../ui/HighlightCard";
 
 interface AboutSectionProps {
   className?: string;
 }
+
+interface HighlightCardData {
+  icon: React.ReactNode;
+  title: string;
+  content: string;
+}
+
+const highlightCards: HighlightCardData[] = [
+  {
+    icon: <Briefcase className="w-6 h-6" />,
+    title: "Experience",
+    content: "Full-Stack & AI Developer at TCS iON",
+  },
+  {
+    icon: <Code2 className="w-6 h-6" />,
+    title: "Tech Focus",
+    content: "React, Node.js, FastAPI, AI/ML",
+  },
+  {
+    icon: <Trophy className="w-6 h-6" />,
+    title: "Achievement",
+    content: "National Top-14 BGIS 2023 Finalist",
+  },
+];
 
 const AboutSection: React.FC<AboutSectionProps> = ({ className }) => {
   return (
     <section
       id="about"
       className={cn(
-        "section-padding bg-bg-playful-white relative overflow-hidden",
+        "py-16 lg:py-24 bg-bg-playful-white relative overflow-hidden",
         className
       )}
       aria-labelledby="about-heading"
@@ -44,95 +68,58 @@ const AboutSection: React.FC<AboutSectionProps> = ({ className }) => {
       />
 
       <div className="container-xl mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <ScrollReveal direction="down" delay={0.05}>
-            <div className="text-center mb-12">
-              <h2 id="about-heading" className="heading-lg text-primary mb-4">
-                About Me
-              </h2>
-              <SketchUnderline color="#FF6B35" width="120px" className="mb-4" />
-            </div>
-          </ScrollReveal>
+          <SectionHeader
+            id="about-heading"
+            title="About Me"
+            underlineColor="#FF6B35"
+            underlineWidth="120px"
+          />
 
-          {/* Content Grid */}
-          <div className="max-w-3xl mx-auto">
-            {/* Professional Summary - Full width */}
+          {/* 2-Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 lg:gap-12">
+            {/* Left Column: Narrative Text */}
             <ScrollReveal direction="up" delay={0.1}>
-              <HoverLift intensity="subtle">
-                <Card className="h-full">
-                  <div className="space-y-6">
-                    <ScrollReveal direction="fade" delay={0.15}>
-                      <p className="body-lg text-text-primary leading-relaxed">
-                        I'm a{" "}
-                        <strong className="text-primary">
-                          Full-Stack & AI Developer
-                        </strong>{" "}
-                        with hands-on experience building scalable, data-driven
-                        web applications at the intersection of modern frontend,
-                        robust backend systems, and applied AI.
-                      </p>
-                    </ScrollReveal>
+              <div className="space-y-6">
+                <p className="body-lg text-text-primary leading-relaxed">
+                  I'm a{" "}
+                  <strong className="text-primary">
+                    Full-Stack & AI Developer
+                  </strong>{" "}
+                  who builds scalable, data-driven applications.
+                </p>
 
-                    <ScrollReveal direction="fade" delay={0.2}>
-                      <div className="space-y-4">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-accent-orange rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="body-md text-text-primary">
-                            Worked at <strong>TCS iON</strong> developing{" "}
-                            <strong>
-                              AI-powered sentiment analysis platforms
-                            </strong>
-                            , RESTful APIs with FastAPI, and React dashboards
-                            with real-time analytics
-                          </p>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-accent-orange rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="body-md text-text-primary">
-                            Combined{" "}
-                            <strong>
-                              rule-based NLP and deep learning (BERT, LSTM)
-                            </strong>{" "}
-                            to deliver insights from text, voice, and facial
-                            data
-                          </p>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-accent-orange rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="body-md text-text-primary">
-                            Build full-stack apps with{" "}
-                            <strong>
-                              React, Node.js, Express, MongoDB, SQL
-                            </strong>{" "}
-                            focused on performance and UX
-                          </p>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-accent-orange rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="body-md text-text-primary">
-                            Pursuing <strong>MCA</strong> and seeking
-                            opportunities to contribute to impactful products
-                          </p>
-                        </div>
-                      </div>
-                    </ScrollReveal>
+                <p className="body-lg text-text-primary leading-relaxed">
+                  At <strong>TCS iON</strong>, I developed{" "}
+                  <strong>AI-powered sentiment analysis platforms</strong>{" "}
+                  combining rule-based NLP and deep learning (BERT, LSTM) to
+                  deliver insights from text, voice, and facial data.
+                </p>
 
-                    <ScrollReveal direction="fade" delay={0.25}>
-                      <div className="mt-6 pt-6 border-t border-gray-200">
-                        <p className="body-md text-text-primary italic">
-                          When I'm not coding, I bring the same strategic
-                          mindset from competitive esports—where I was a{" "}
-                          <strong className="text-primary">
-                            National Top-14 Finalist in BGMI 2023
-                          </strong>
-                          —into problem-solving, teamwork, and execution.
-                        </p>
-                      </div>
-                    </ScrollReveal>
-                  </div>
-                </Card>
-              </HoverLift>
+                <p className="body-lg text-text-primary leading-relaxed">
+                  When I'm not coding, I bring the same strategic mindset from
+                  competitive esports—where I was a{" "}
+                  <strong className="text-primary">
+                    National Top-14 Finalist in BGIS 2023
+                  </strong>
+                  —into problem-solving and execution.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Right Column: Highlight Cards */}
+            <ScrollReveal direction="up" delay={0.2}>
+              <div className="flex flex-col gap-4">
+                {highlightCards.map((card, index) => (
+                  <HighlightCard
+                    key={index}
+                    icon={card.icon}
+                    title={card.title}
+                    content={card.content}
+                  />
+                ))}
+              </div>
             </ScrollReveal>
           </div>
         </div>

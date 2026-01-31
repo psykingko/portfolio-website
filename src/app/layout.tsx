@@ -7,17 +7,83 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
   title: "Ashish Singh - Full Stack & AI Developer",
   description:
     "Full Stack & AI Developer specializing in React, Node.js, FastAPI, and NLP. Building scalable web applications and ML-powered systems.",
+  keywords: [
+    "Full Stack Developer",
+    "AI Developer",
+    "React",
+    "Node.js",
+    "FastAPI",
+    "NLP",
+    "Machine Learning",
+    "Web Development",
+  ],
+  authors: [{ name: "Ashish Singh" }],
+  creator: "Ashish Singh",
+  publisher: "Ashish Singh",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
+  openGraph: {
+    title: "Ashish Singh - Full Stack & AI Developer",
+    description:
+      "Full Stack & AI Developer specializing in React, Node.js, FastAPI, and NLP. Building scalable web applications and ML-powered systems.",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+    siteName: "Ashish Singh Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ashish Singh - Full Stack & AI Developer",
+    description:
+      "Full Stack & AI Developer specializing in React, Node.js, FastAPI, and NLP.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+    other: [{ rel: "manifest", url: "/favicon/site.webmanifest" }],
+  },
 };
 
 export default function RootLayout({
@@ -28,9 +94,19 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
+        />
         <meta name="theme-color" content="#1b2651" />
         <meta name="color-scheme" content="light" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-bg-beige`}

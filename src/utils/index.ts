@@ -4,3 +4,4 @@ export * from "./seo";
 export * from "./env";
 export * from "./email";
 export * from "./cn";
+export * from "./projects";

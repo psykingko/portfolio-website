@@ -34,7 +34,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   const [ref, inView] = useInView({
     threshold,
     triggerOnce,
-    rootMargin: "0px 0px -10px 0px",
+    rootMargin: "100px 0px 0px 0px", // Trigger 100px before element enters viewport
   });
 
   // Create animation variants based on direction

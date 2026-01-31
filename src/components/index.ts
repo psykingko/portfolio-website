@@ -17,6 +17,7 @@ export { default as Modal } from "./ui/Modal";
 export { default as LoadingSpinner } from "./ui/LoadingSpinner";
 export { default as ProjectCard } from "./ui/ProjectCard";
 export type { ProjectCardProps } from "./ui/ProjectCard";
+export { default as SectionHeader } from "./ui/SectionHeader";
 
 // Demo Components
 export { default as ComponentShowcase } from "./demo/ComponentShowcase";

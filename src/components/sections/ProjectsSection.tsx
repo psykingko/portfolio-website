@@ -87,7 +87,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             <div className="text-center mt-16">
               <HoverScale intensity="subtle">
                 <a
-                  href="https://github.com/singhashish9599"
+                  href="https://github.com/psykingko?tab=repositories"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-primary hover:text-primary-dark transition-colors duration-200 body-lg font-medium group"
